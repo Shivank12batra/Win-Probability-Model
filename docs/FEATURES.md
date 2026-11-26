@@ -142,6 +142,23 @@ scales the window rate into a remaining-match rate.
 | `matches_played_season` | Reliability of the strength estimate | pre-match | 2 |
 | `promoted` | No top-five history this season | pre-match | 3 |
 
+#### Running Elo, not a season-end dump
+
+A season-end rating is unusable for live prediction: using it to score an
+October match leaks the future. Elo is therefore produced as a **time series**,
+and only the value as of kickoff is exposed to the model.
+
+| Artefact | Granularity | Use |
+|---|---|---|
+| `elo_matches.csv` | one row per match | `elo_home_pre` / `elo_away_pre` (model input), post ratings for audit |
+| `elo_timeline.csv` | one row per team per match | rating evolution, charts, debugging |
+| `elo_current.csv` | latest snapshot | serving fallback, cold starts |
+
+The pre-match rating of match *N* is exactly the post-match rating of that
+team's previous match (tested). The three-way extension uses Davidson's draw
+model, with `nu` fitted only on seasons before the evaluation window
+(0.755 on 2000–2019).
+
 ### G4 — In-match evidence
 
 | Feature | Definition | Window | Tier |

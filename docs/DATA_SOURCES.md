@@ -19,34 +19,45 @@ archive).
 | **football-data.co.uk** | Results + closing odds | 1993/94 → 2025/26, top 5 | Static CSVs | ✅ 200 |
 | **StatsBomb open data** | Full event streams, 360 data on some matches | 80 competition-seasons; La Liga 2009/10–2020/21, 2015/16 for others | GitHub raw JSON | ✅ 200 |
 | **Understat** | Shot-level xG | Top 5 + RPL, 2014– | Scraping | ⚠️ 200 but serving *"We will come back soon"* |
-| **WhoScored** | Event data | 2010 → | Scraping | ❌ 403 (Cloudflare) |
+| **WhoScored** | Full event data | 2010 → 2026 | Existing proxy scraper in `sports-highlight` | ⚠️ 403 direct; ✅ via residential proxy / ScrapingBee (paid) |
+| **Scoresway** | Full event feed (Opta-shaped) | varies; women's/youth leagues | Existing client in `sports-highlight` | ⚠️ requires `SCORESWAY_OUTLET_AUTH` |
 | **SofaScore** | Live stats | Broad | Undocumented API | ❌ 403 |
 | **ClubElo API** | Elo ratings | Long history | `api.clubelo.com` | ❌ not responding |
 | **FBref** | Advanced stats | Historical | Scraping | ⚠️ lost Opta licence Jan 2026; archive only |
 
 ---
 
-## 2. The WhoScored reality check
+## 2. WhoScored and Scoresway: what you already have
 
-The plan of "WhoScored event data from 2010 to now" is not a free, reliable
-path in 2026:
+The earlier assumption that WhoScored is unreachable is only true for plain
+requests. The `sports-highlight` repository already contains a working event
+pipeline:
 
-- Direct requests return **403** behind Cloudflare.
-- It requires a headless browser, residential proxies, cookie/session handling,
-  and constant maintenance. Commercial scraping APIs that can do it cost money
-  and carry terms-of-service risk.
-- The payoff over the free stack is smaller than it looks: we need **goal
-  timing, cards, xG and shot volume**, not every pass. FotMob already provides
-  those from 2020/21, and StatsBomb provides full events for 2015/16 plus the
-  full La Liga run.
+| Component | Path | What it does |
+|---|---|---|
+| WhoScored scraper | `services/video_processor/src/whoscored_match_scraper.py` | Fetches match HTML via residential proxies, parses `matchCentreData` |
+| Proxy fallback | `services/video_processor/src/scrapingbee_proxy.py` | Paid last resort when proxies are blocked |
+| Scoresway client | `services/video_processor/src/scoresway_client.py` | Fetches full Opta-shaped event feeds |
+| Schema mapper | `services/video_processor/src/scoresway_to_whoscored.py` | Converts Scoresway events into WhoScored-shaped records |
+| Fixture index | `services/video_processor/data/fixtures/whoscored/*.json` | `game_id`, teams and dates, 2010/11 → 2026/27 |
 
-**Recommendation:** do not build the project on WhoScored. Use it only as an
-optional enrichment later if you obtain licensed access.
+This means a 2010→ event corpus is genuinely available, with three caveats:
 
-This also means a 2010–2020 archive across all five leagues is not freely
-available. That is acceptable: football's goal environment has shifted
-(added time, five substitutions, VAR), so 2020→present is arguably the more
-relevant training distribution.
+1. **It costs money.** Residential proxy bandwidth or ScrapingBee credits, plus
+   retries. Direct success rates are roughly 45% (Decodo) to 20% (DataImpulse)
+   per attempt, so a full backfill needs budget.
+2. **It needs secrets.** `WHOSCORED_PROXY_URL`, `DATAIMPULSE_LOGIN/PASSWORD`,
+   `SCRAPINGBEE_API_KEY`, `SCORESWAY_OUTLET_AUTH`. None may be committed.
+3. **The fixture files are indexes, not events.** They contain `game_id` and
+   metadata only — the event payload is fetched per match.
+
+**Decision for now:** Phase 1 uses the free stack (football-data + FotMob +
+StatsBomb). The existing scrapers are the upgrade path for event-level features
+(xT, VAEP, passing networks) once the free baseline is calibrated. They are not
+on the critical path.
+
+If we do use them, the output already matches the WhoScored event schema, so the
+feature code does not need a second flavour.
 
 ---
 

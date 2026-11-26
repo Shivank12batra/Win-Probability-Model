@@ -23,7 +23,26 @@ when the test passes, not when the code is written.
 
 ---
 
-## Phase 1 — Historical dataset
+## Phase 1a — Pre-match prior ✅ (2026-11-26)
+
+**Deliverable**
+- Results + closing odds, 2000–2026, five leagues (46,389 matches).
+- Running Elo: pre/post rating per match, team timeline, current snapshot.
+- De-vigged market probabilities (power method).
+- Davidson three-way extension, `nu` fitted pre-2020.
+- Walk-forward baseline report.
+
+**Result**
+- 11,282 evaluation matches (2020–2026).
+- Market RPS **0.1950**, ECE 0.007.
+- Elo RPS **0.2036**, ECE 0.035.
+- Report: `reports/prior_baseline.md`.
+
+The market beats Elo, as expected. Both are now available as priors/features.
+
+---
+
+## Phase 1b — In-play dataset
 
 **Deliverable**
 - Full backfill: fixtures 2020→present, then match details (shots + events).

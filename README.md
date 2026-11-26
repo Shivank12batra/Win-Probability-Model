@@ -16,9 +16,11 @@ with three structural changes:
 
 ## Status
 
-**Phase 0 complete.** Repository, verified sources, Elo builder, ingestion
-clients, and the training-row builder are in place. See
-[`docs/ROADMAP.md`](docs/ROADMAP.md).
+**Phase 0 complete; pre-match prior complete.** Repository, verified sources,
+ingestion clients, training-row builder, running Elo, market prior and a
+walk-forward baseline comparison are in place. See
+[`docs/ROADMAP.md`](docs/ROADMAP.md) and
+[`reports/prior_baseline.md`](reports/prior_baseline.md).
 
 ## Documentation
 
@@ -35,8 +37,8 @@ clients, and the training-row builder are in place. See
 python3 -m pip install -e .          # or: make install
 export PYTHONPATH=src
 
-# Elo ratings from 2019-2025 (~12.5k matches)
-python3 -m wpm.cli fd-elo --start 2019 --end 2025
+# Results + odds + running Elo + market prior, 2000-2026 (46k matches)
+python3 -m wpm.cli fd-build --start 2000 --end 2026
 
 # Inspect one match: shots, events, live xG
 python3 -m wpm.cli fotmob-match --id 4506349
