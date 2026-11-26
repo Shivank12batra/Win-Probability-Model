@@ -178,6 +178,11 @@ model, with `nu` fitted only on seasons before the evaluation window
 xG already contains shot *quality*; shot counts add *volume*, which xG discards.
 Both are kept pending ablation.
 
+**Availability:** see [`FEATURE_AVAILABILITY.md`](FEATURE_AVAILABILITY.md). FotMob
+provides every per-event feature above from 2020/21, but its aggregate stats are
+match-level only. `momentum_10` exists only from 2023 and is a proprietary black
+box; `xg_window` is the reproducible substitute.
+
 ### G5 — Context
 
 | Feature | Definition | Tier |

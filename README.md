@@ -30,6 +30,7 @@ and a 380-match season backfill are in place. See [`docs/ROADMAP.md`](docs/ROADM
 | Document | Contents |
 |---|---|
 | [`docs/FEATURES.md`](docs/FEATURES.md) | Every feature, definition, window, leakage rule, ablation plan |
+| [`docs/FEATURE_AVAILABILITY.md`](docs/FEATURE_AVAILABILITY.md) | What FotMob can and cannot supply, by feature |
 | [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) | What works in 2026, coverage, rate limits, backfill plan |
 | [`docs/REEP.md`](docs/REEP.md) | Cross-provider match IDs and measured coverage |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Offline vs online systems, hosting, reliability |
