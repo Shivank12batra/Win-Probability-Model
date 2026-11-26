@@ -20,14 +20,14 @@ RED_CARD_TYPES = {"Red", "SecondYellow", "YellowRed"}
 
 
 def _event_time(events: pd.DataFrame) -> pd.Series:
-    minute = events.get("minute", pd.Series(dtype=float)).fillna(0).astype(float)
-    added = events.get("added", pd.Series(0, index=events.index)).fillna(0).astype(float)
+    minute = pd.to_numeric(events.get("minute"), errors="coerce").fillna(0.0)
+    added = pd.to_numeric(events.get("added"), errors="coerce").fillna(0.0)
     return minute + added
 
 
 def _shot_time(shots: pd.DataFrame) -> pd.Series:
-    minute = shots.get("min", pd.Series(dtype=float)).fillna(0).astype(float)
-    added = shots.get("minAdded", pd.Series(0, index=shots.index)).fillna(0).astype(float)
+    minute = pd.to_numeric(shots.get("min"), errors="coerce").fillna(0.0)
+    added = pd.to_numeric(shots.get("minAdded"), errors="coerce").fillna(0.0)
     return minute + added
 
 
@@ -40,10 +40,15 @@ def build_windows(
     shots: pd.DataFrame,
     window: int = 5,
     max_minute: int = 90,
+    end_minute: Optional[int] = None,
     league: Optional[str] = None,
     match_id: Optional[int] = None,
 ) -> pd.DataFrame:
-    """Return the window-level frame for one match."""
+    """Return the window-level frame for one match.
+
+    ``end_minute`` should be the actual final whistle (including stoppage time),
+    rounded up to the next window boundary. If omitted, ``max_minute`` is used.
+    """
     events = events.copy()
     shots = shots.copy()
     if events.empty:
@@ -57,13 +62,15 @@ def build_windows(
         shots["t"] = pd.Series(dtype=float)
         shots["xg"] = pd.Series(dtype=float)
 
+    horizon = int(end_minute) if end_minute is not None else int(max_minute)
+
     goals = events[events["type"].isin(GOAL_TYPES)]
     cards = events[events["type"] == "Card"]
     reds = cards[cards["card"].isin(RED_CARD_TYPES)]
     yellows = cards[cards["card"] == "Yellow"]
 
     rows = []
-    for start in range(0, max_minute, window):
+    for start in range(0, horizon, window):
         end = start + window
         goals_before = goals[goals["t"] <= start]
         goals_in = goals[(goals["t"] > start) & (goals["t"] <= end)]
@@ -93,7 +100,7 @@ def build_windows(
                     "team": team,
                     "opponent": opponent,
                     "is_home": is_home,
-                    "minutes_remaining": max_minute - start,
+                    "minutes_remaining": horizon - start,
                     "score_diff": (score_home - score_away) if is_home else (score_away - score_home),
                     "total_goals": score_home + score_away,
                     "red_diff": (red_home - red_away) if is_home else (red_away - red_home),

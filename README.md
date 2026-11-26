@@ -16,12 +16,13 @@ with three structural changes:
 
 ## Status
 
-**Phase 0 complete; pre-match prior complete; match identity solved.** Repository,
-verified sources, ingestion clients, training-row builder, running Elo, market
-prior, and Reep cross-provider coverage are in place. See
-[`docs/ROADMAP.md`](docs/ROADMAP.md),
-[`reports/prior_baseline.md`](reports/prior_baseline.md) and
-[`reports/reep_coverage.md`](reports/reep_coverage.md).
+**Phase 0 complete; pre-match prior complete; match identity solved; in-play
+sample validated.** Repository, verified sources, ingestion clients, training-row
+builder, running Elo, market prior, Reep coverage and a 200-match FotMob
+validation are in place. See [`docs/ROADMAP.md`](docs/ROADMAP.md),
+[`reports/prior_baseline.md`](reports/prior_baseline.md),
+[`reports/reep_coverage.md`](reports/reep_coverage.md) and
+[`reports/sample_validation.md`](reports/sample_validation.md).
 
 ## Documentation
 

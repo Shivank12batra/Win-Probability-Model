@@ -44,7 +44,14 @@ The market beats Elo, as expected. Both are now available as priors/features.
 
 ## Phase 1b — In-play dataset
 
-**Deliverable**
+**Validation sample ✅ (2026-11-26)**
+- 200 matches, stratified across five leagues and 2020–2026.
+- 200/200 shot maps, events, goal counts and window targets consistent.
+- 17 shots out of ~5,000 missing xG (0.3%); treated as zero.
+- 22 matches with red cards, confirming discipline events are captured.
+- Report: `reports/sample_validation.md`.
+
+**Remaining deliverable**
 - Match identity via Reep (no custom registry).
 - Full backfill: fixtures 2020→present, then match details (shots + events).
 - `matches.parquet` index with a `status` column (`ok`, `missing_shots`, `missing_events`, `abandoned`).

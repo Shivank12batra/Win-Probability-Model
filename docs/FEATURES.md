@@ -31,6 +31,10 @@ match progresses.
 - One row per `(match, window, team)`.
 - Two rows per window (home perspective, away perspective).
 - Non-overlapping windows for training; sliding windows at inference.
+- The horizon is the **actual final whistle** (including stoppage time), rounded
+  up to the next window boundary — not a fixed 90 minutes. This was caught in the
+  200-match validation sample: 11 matches had goals after minute 95 that a fixed
+  horizon silently dropped.
 
 ### 1.2 Likelihood
 

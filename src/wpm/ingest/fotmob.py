@@ -94,7 +94,9 @@ class FotMob:
         }
 
     def shots(self, match_id: int) -> pd.DataFrame:
-        details = self.match_details(match_id)
+        return self.shots_from_details(self.match_details(match_id))
+
+    def shots_from_details(self, details: Dict[str, Any]) -> pd.DataFrame:
         shots = (details.get("content", {}) or {}).get("shotmap", {}).get("shots", []) or []
         columns = [
             "id",
@@ -123,7 +125,9 @@ class FotMob:
         return df[columns]
 
     def events(self, match_id: int) -> pd.DataFrame:
-        details = self.match_details(match_id)
+        return self.events_from_details(self.match_details(match_id))
+
+    def events_from_details(self, details: Dict[str, Any]) -> pd.DataFrame:
         events = (
             (details.get("content", {}) or {}).get("matchFacts", {}).get("events", {}) or {}
         ).get("events", []) or []
