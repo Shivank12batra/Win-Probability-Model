@@ -27,9 +27,9 @@ TOP_FIVE_HINTS = (
 
 
 class FotMob:
-    def __init__(self, client: Optional[HttpClient] = None) -> None:
+    def __init__(self, client: Optional[HttpClient] = None, min_interval: float = 1.5) -> None:
         self.client = client or HttpClient(
-            min_interval=1.5,
+            min_interval=min_interval,
             headers={"Referer": "https://www.fotmob.com/", "Accept": "application/json"},
         )
 
@@ -79,11 +79,19 @@ class FotMob:
         return self.client.get_json(f"{BASE}/matchDetails", params={"matchId": match_id})
 
     def match_meta(self, match_id: int) -> Dict[str, Any]:
-        general = (self.match_details(match_id).get("general") or {})
+        return self.meta_from_details(self.match_details(match_id))
+
+    def meta_from_details(self, details: Dict[str, Any]) -> Dict[str, Any]:
+        general = details.get("general", {}) or {}
         home = general.get("homeTeam") or {}
         away = general.get("awayTeam") or {}
+        if not home or not away:
+            teams = (details.get("header", {}) or {}).get("teams", []) or []
+            if len(teams) == 2:
+                home = {"name": teams[0].get("name"), "id": teams[0].get("id")}
+                away = {"name": teams[1].get("name"), "id": teams[1].get("id")}
         return {
-            "match_id": int(general.get("matchId", match_id)),
+            "match_id": int(general.get("matchId", 0) or 0),
             "league": general.get("leagueName"),
             "league_id": general.get("leagueId"),
             "round": general.get("matchRound"),

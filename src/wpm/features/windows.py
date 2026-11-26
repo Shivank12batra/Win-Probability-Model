@@ -11,6 +11,7 @@ model predicts the next window and that rate is scaled by the minutes remaining.
 
 from __future__ import annotations
 
+import math
 from typing import Any, Optional
 
 import pandas as pd
@@ -29,6 +30,14 @@ def _shot_time(shots: pd.DataFrame) -> pd.Series:
     minute = pd.to_numeric(shots.get("min"), errors="coerce").fillna(0.0)
     added = pd.to_numeric(shots.get("minAdded"), errors="coerce").fillna(0.0)
     return minute + added
+
+
+def final_whistle(events: pd.DataFrame, window: int = 5, default: int = 95) -> int:
+    """Last event time, rounded up to the next window boundary."""
+    if events.empty:
+        return default
+    last = float(_event_time(events).max())
+    return int(math.ceil(last / window) * window)
 
 
 def build_windows(

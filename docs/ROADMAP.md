@@ -51,6 +51,12 @@ The market beats Elo, as expected. Both are now available as priors/features.
 - 22 matches with red cards, confirming discipline events are captured.
 - Report: `reports/sample_validation.md`.
 
+**Scale test ✅ (2026-11-26)**
+- Full 2025/26 Premier League season: 380/380 matches, 0 failures.
+- 14,450 window rows (38 per match), 0 duplicates.
+- 380/380 window targets reconcile with final scores.
+- Report: `reports/backfill_scale_test.md`.
+
 **Remaining deliverable**
 - Match identity via Reep (no custom registry).
 - Full backfill: fixtures 2020→present, then match details (shots + events).
