@@ -17,6 +17,7 @@ archive).
 | **FotMob** (internal JSON) | Fixtures, live clock, score, **live xG**, **shot map with per-shot xG + minute**, momentum, events, lineups | Top 5 + Europe; shot maps from **2020/21** | `fotmob.com/api/data/*` | ✅ 200 |
 | **ESPN** (hidden API) | Live score, clock, cards, possession/shots, **shot coordinates** in commentary, pre-match odds | Top 5 + Europe | `site.api.espn.com/apis/site/v2/sports/soccer/*` | ✅ 200 |
 | **football-data.co.uk** | Results + closing odds | 1993/94 → 2025/26, top 5 | Static CSVs | ✅ 200 |
+| **Reep** | Cross-provider ID register (matches, teams, players) | 1.5M matches; ~900k FotMob/WhoScored bridges | DuckDB/Parquet, CC0 | ✅ tested |
 | **StatsBomb open data** | Full event streams, 360 data on some matches | 80 competition-seasons; La Liga 2009/10–2020/21, 2015/16 for others | GitHub raw JSON | ✅ 200 |
 | **Understat** | Shot-level xG | Top 5 + RPL, 2014– | Scraping | ⚠️ 200 but serving *"We will come back soon"* |
 | **WhoScored** | Full event data | 2010 → 2026 | Existing proxy scraper in `sports-highlight` | ⚠️ 403 direct; ✅ via residential proxy / ScrapingBee (paid) |

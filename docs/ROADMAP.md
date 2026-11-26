@@ -45,6 +45,7 @@ The market beats Elo, as expected. Both are now available as priors/features.
 ## Phase 1b — In-play dataset
 
 **Deliverable**
+- Match identity via Reep (no custom registry).
 - Full backfill: fixtures 2020→present, then match details (shots + events).
 - `matches.parquet` index with a `status` column (`ok`, `missing_shots`, `missing_events`, `abandoned`).
 - Window table for every usable match, partitioned by season.

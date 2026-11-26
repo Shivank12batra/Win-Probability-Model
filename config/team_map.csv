@@ -1,0 +1,146 @@
+fd_name,league,reep_id,reep_name,country,bridges
+Ajaccio,LIGUE1,rtebc2a4650078c8,Ajaccio,France,17
+Alaves,LALIGA,rt51f22a81a326bc,Alavés,Spain,19
+Almeria,LALIGA,rt4286976e124141,Almería,Spain,19
+Angers,LIGUE1,rt3ead64394f088a,Angers SCO,France,19
+Arsenal,EPL,rt13f99514be4cfd,Arsenal,England,24
+Aston Villa,EPL,rt5ab67076de8cc1,Aston Villa,England,24
+Atalanta,SERIEA,rtb02fbed24c7ea4,Atalanta,Italy,20
+Ath Bilbao,LALIGA,rtd29a7a123d25a1,Athletic Club,Spain,19
+Ath Madrid,LALIGA,rtddd2e265b3306c,Atlético de Madrid,Spain,19
+Augsburg,BUNDESLIGA,rted8857f5fd1074,Augsburg,Germany,19
+Auxerre,LIGUE1,rt124ec4279329e4,Auxerre,France,19
+Barcelona,LALIGA,rt687c137e154afd,Barcelona,Spain,18
+Bayern Munich,BUNDESLIGA,rte09cffe6a3e617,Bayern München,Germany,18
+Benevento,SERIEA,rt1baaaf4100b4a0,Benevento,Italy,19
+Betis,LALIGA,rtb2602eb76f3369,Real Betis,Spain,19
+Bielefeld,BUNDESLIGA,rt119e4ac75d3a17,Arminia Bielefeld,Germany,19
+Bochum,BUNDESLIGA,rt29e02b2feb92fd,Bochum,Germany,19
+Bologna,SERIEA,rte23a04ed7a0934,Bologna,Italy,20
+Bordeaux,LIGUE1,rt85a80ab21708b0,Bordeaux,France,14
+Bournemouth,EPL,rt3bdff329d36885,Bournemouth,England,24
+Brentford,EPL,rtdb4308cb351fa7,Brentford,England,24
+Brest,LIGUE1,rtbce79ca18427c6,Brest,France,20
+Brighton,EPL,rt78f360d6fde57e,Brighton & Hove Albion,England,23
+Burnley,EPL,rt8207c50b498ed3,Burnley,England,24
+Cadiz,LALIGA,rte0b9e3112660b2,Cádiz,Spain,19
+Cagliari,SERIEA,rt2c8373ad3468d9,Cagliari,Italy,19
+Celta,LALIGA,rtf2d6a11b80a5cd,Celta de Vigo,Spain,20
+Chelsea,EPL,rt3763d29e7947d8,Chelsea,England,25
+Clermont,LIGUE1,rt1c0c3e8061cc09,Clermont,France,19
+Como,SERIEA,rt9ffea5a71797f3,Como,Italy,18
+Coventry,EPL,rtbc67cd7c5a1d66,Coventry City,England,18
+Cremonese,SERIEA,rt2be91c9b483a69,Cremonese,Italy,19
+Crotone,SERIEA,rt4ec0885a847dc3,Crotone,Italy,16
+Crystal Palace,EPL,rtbaccc9912a7639,Crystal Palace,England,23
+Darmstadt,BUNDESLIGA,rt530a160f6aad5c,Darmstadt 98,Germany,19
+Dijon,LIGUE1,rt43e22e9723e5f1,Dijon,France,18
+Dortmund,BUNDESLIGA,rt5b00f3e450abe5,Borussia Dortmund,Germany,20
+Eibar,LALIGA,rtd4768fe3431e81,Eibar,Spain,18
+Ein Frankfurt,BUNDESLIGA,rt1f8e3ae3386578,Eintracht Frankfurt,Germany,19
+Elche,LALIGA,rt1aeb4e4f512ce7,Elche,Spain,19
+Elversberg,BUNDESLIGA,rtd01892ccba029c,Elversberg,Germany,18
+Empoli,SERIEA,rt92cabc8288eb1c,Empoli,Italy,18
+Espanol,LALIGA,rtcac7c533504c13,Espanyol,Spain,18
+Everton,EPL,rt9a79cf4e54e278,Everton,England,24
+FC Koln,BUNDESLIGA,rta05788088ae5c0,Köln,Germany,18
+Fiorentina,SERIEA,rt77e94c8ff0ebd3,Fiorentina,Italy,19
+Freiburg,BUNDESLIGA,rt0251784a5ac5d8,Freiburg,Germany,19
+Frosinone,SERIEA,rtf3632c98e381de,Frosinone,Italy,19
+Fulham,EPL,rtcb5205b7f83a93,Fulham,England,25
+Genoa,SERIEA,rt4ef8a1dafb90e5,Genoa,Italy,19
+Getafe,LALIGA,rt3b3ba148e6596d,Getafe,Spain,20
+Girona,LALIGA,rt81138faf473ccd,Girona,Spain,20
+Granada,LALIGA,rtfc400462cbc492,Granada,Spain,18
+Greuther Furth,BUNDESLIGA,rt5a30da04608e08,Greuther Fürth,Germany,16
+Hamburg,BUNDESLIGA,rt2d7f0d98cabbd0,Hamburger SV,Germany,17
+Heidenheim,BUNDESLIGA,rt34e8e6e3731857,Heidenheim,Germany,20
+Hertha,BUNDESLIGA,rtee7ee345bdb76b,Hertha BSC,Germany,17
+Hoffenheim,BUNDESLIGA,rt68bc8e8f376aec,Hoffenheim,Germany,19
+Holstein Kiel,BUNDESLIGA,rt80c3707370931f,Holstein Kiel,Germany,18
+Huesca,LALIGA,rtb6fab1fff50211,Huesca,Spain,19
+Hull,EPL,rtf38678780871c4,Hull City,England,19
+Inter,SERIEA,rtf515aff7e13875,Internazionale,Italy,18
+Ipswich,EPL,rt1874a32186f729,Ipswich Town,England,19
+Juventus,SERIEA,rtd16cab27b76809,Juventus,Italy,19
+La Coruna,LALIGA,rtf3292c71878d5c,Deportivo de La Coruña,Spain,18
+Las Palmas,LALIGA,rt81d3665e479bc8,Las Palmas,Spain,19
+Lazio,SERIEA,rt390749f063fece,Lazio,Italy,19
+Le Havre,LIGUE1,rt7738e40dbc4866,Le Havre,France,18
+Le Mans,LIGUE1,rt1c5394a8441965,Le Mans,France,18
+Lecce,SERIEA,rtfec9cdfb9dce58,Lecce,Italy,19
+Leeds,EPL,rt2c10fab805c3ea,Leeds United,England,20
+Leganes,LALIGA,rt038f78680c0da3,Leganés,Spain,19
+Leicester,EPL,rtdd8b468937ef95,Leicester City,England,18
+Lens,LIGUE1,rtee6127e65cda46,Lens,France,20
+Levante,LALIGA,rtec6b5829356b14,Levante,Spain,18
+Leverkusen,BUNDESLIGA,rtce921fd0b058d4,Bayer Leverkusen,Germany,19
+Lille,LIGUE1,rt8d7b5f8325823b,Lille,France,20
+Liverpool,EPL,rt0fcab1a2109ab8,Liverpool,England,24
+Lorient,LIGUE1,rtc64f3c679c2053,Lorient,France,19
+Luton,EPL,rt0feb87271aa74b,Luton Town,England,23
+Lyon,LIGUE1,rt170e5975ae773b,Olympique Lyonnais,France,19
+M'gladbach,BUNDESLIGA,rt0b8ab8763f4087,Borussia M'gladbach,Germany,19
+Mainz,BUNDESLIGA,rt8b750798ad70b3,Mainz 05,Germany,20
+Malaga,LALIGA,rtbb5c4037edb834,Málaga,Spain,19
+Mallorca,LALIGA,rt7fa25a0b134eaa,Mallorca,Spain,19
+Man City,EPL,rt37c836a696a159,Manchester City,England,24
+Man United,EPL,rt85aa78bccbd812,Manchester United,England,24
+Marseille,LIGUE1,rt3b32cc33e54066,Olympique Marseille,France,20
+Metz,LIGUE1,rtdf67ba75d4f337,Metz,France,18
+Milan,SERIEA,rtd008f142a67062,Milan,Italy,18
+Monaco,LIGUE1,rt9b9371ba8df185,Monaco,Monaco,20
+Montpellier,LIGUE1,rte1ecb562efb09b,Montpellier,France,18
+Monza,SERIEA,rt92846cee69557a,Monza,Italy,19
+Nantes,LIGUE1,rt558f160f6c4cde,Nantes,France,18
+Napoli,SERIEA,rt4c540e697cd963,Napoli,Italy,20
+Newcastle,EPL,rt9216c37cb92105,Newcastle United,England,25
+Nice,LIGUE1,rtf31aaf55c6f1ef,Nice,France,20
+Nimes,LIGUE1,rt886d21bfa2b66e,Nîmes,France,16
+Norwich,EPL,rt9587b13df1ee36,Norwich City,England,19
+Nott'm Forest,EPL,rt9420ae803b8a55,Nottingham Forest,England,24
+Osasuna,LALIGA,rt7fe21ad9533d06,Osasuna,Spain,19
+Oviedo,LALIGA,rtdeeed5f1399acc,Real Oviedo,Spain,18
+Paderborn,BUNDESLIGA,rt82f73d0f2fc759,Paderborn,Germany,19
+Paris FC,LIGUE1,rtb116d56c21e991,Paris FC,France,16
+Paris SG,LIGUE1,rt8577a2f82c765a,Paris Saint-Germain,France,19
+Parma,SERIEA,rt5cd61d8f161552,Parma,Italy,18
+Pisa,SERIEA,rtfeb31aad057acc,Pisa,Italy,18
+RB Leipzig,BUNDESLIGA,rtfdf03af038d69b,RB Leipzig,Germany,17
+Real Madrid,LALIGA,rt55bc517cd4c57b,Real Madrid,Spain,19
+Reims,LIGUE1,rt4f837f552c142d,Reims,France,18
+Rennes,LIGUE1,rtf1f0c9180f63c3,Rennes,France,19
+Roma,SERIEA,rt31e54dda6aaf86,Roma,Italy,19
+Salernitana,SERIEA,rt72e1d84e64df83,Salernitana,Italy,18
+Sampdoria,SERIEA,rt7f8be1fc986ca4,Sampdoria,Italy,17
+Santander,LALIGA,rt388e3bc5a84036,Racing de Santander,Spain,18
+Sassuolo,SERIEA,rt267acaea10521e,Sassuolo,Italy,18
+Schalke 04,BUNDESLIGA,rtaf5845bd35784e,Schalke 04,Germany,18
+Sevilla,LALIGA,rt54e7121959ab4c,Sevilla,Spain,19
+Sheffield United,EPL,rt1766c4f7cb0931,Sheffield United,England,23
+Sociedad,LALIGA,rtd8a2bb674109b9,Real Sociedad,Spain,18
+Southampton,EPL,rt4ba241d195a7ef,Southampton,England,20
+Spezia,SERIEA,rt3463c48f3a1cbb,Spezia,Italy,18
+St Etienne,LIGUE1,rt059b7555408547,Saint-Étienne,France,18
+St Pauli,BUNDESLIGA,rtf992c15ea1d1c4,St. Pauli,Germany,18
+Strasbourg,LIGUE1,rt13c473acaa51ae,Strasbourg,France,19
+Stuttgart,BUNDESLIGA,rt0ded59db8642fe,Stuttgart,Germany,18
+Sunderland,EPL,rtb471f322d5ad96,Sunderland,England,19
+Torino,SERIEA,rte534dd7dc794c0,Torino,Italy,19
+Tottenham,EPL,rtcffb6a6bdb89fe,Tottenham Hotspur,England,24
+Toulouse,LIGUE1,rt3eeddb521998a0,Toulouse,France,19
+Troyes,LIGUE1,rt78790fdf1c4306,Troyes,France,19
+Udinese,SERIEA,rta16842d30bb857,Udinese,Italy,18
+Union Berlin,BUNDESLIGA,rt58a40f042bfcfd,Union Berlin,Germany,19
+Valencia,LALIGA,rte32af9ed82e3ef,Valencia,Spain,19
+Valladolid,LALIGA,rt40451204d00d85,Real Valladolid,Spain,19
+Vallecano,LALIGA,rtcd4698e91172ff,Rayo Vallecano,Spain,20
+Venezia,SERIEA,rt4b0352a028b599,Venezia,Italy,19
+Verona,SERIEA,rtfa8d1f9c50ed3b,Hellas Verona,Italy,19
+Villarreal,LALIGA,rtb7ee4b315e86ec,Villarreal,Spain,20
+Watford,EPL,rtfc419c6db9e06f,Watford,England,19
+Werder Bremen,BUNDESLIGA,rte2da7a277916f2,Werder Bremen,Germany,18
+West Brom,EPL,rt411d7e1fcb4344,West Bromwich Albion,England,19
+West Ham,EPL,rt63d613341bc69c,West Ham United,England,22
+Wolfsburg,BUNDESLIGA,rt1c683b74f5e1e3,Wolfsburg,Germany,18
+Wolves,EPL,rt35d1f783b10ae1,Wolverhampton Wanderers,England,25

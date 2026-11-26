@@ -16,11 +16,12 @@ with three structural changes:
 
 ## Status
 
-**Phase 0 complete; pre-match prior complete.** Repository, verified sources,
-ingestion clients, training-row builder, running Elo, market prior and a
-walk-forward baseline comparison are in place. See
-[`docs/ROADMAP.md`](docs/ROADMAP.md) and
-[`reports/prior_baseline.md`](reports/prior_baseline.md).
+**Phase 0 complete; pre-match prior complete; match identity solved.** Repository,
+verified sources, ingestion clients, training-row builder, running Elo, market
+prior, and Reep cross-provider coverage are in place. See
+[`docs/ROADMAP.md`](docs/ROADMAP.md),
+[`reports/prior_baseline.md`](reports/prior_baseline.md) and
+[`reports/reep_coverage.md`](reports/reep_coverage.md).
 
 ## Documentation
 
@@ -28,6 +29,7 @@ walk-forward baseline comparison are in place. See
 |---|---|
 | [`docs/FEATURES.md`](docs/FEATURES.md) | Every feature, definition, window, leakage rule, ablation plan |
 | [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) | What works in 2026, coverage, rate limits, backfill plan |
+| [`docs/REEP.md`](docs/REEP.md) | Cross-provider match IDs and measured coverage |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Offline vs online systems, hosting, reliability |
 | [`docs/ROADMAP.md`](docs/ROADMAP.md) | Phases and acceptance criteria |
 
