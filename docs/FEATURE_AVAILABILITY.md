@@ -148,6 +148,58 @@ are v3, not blockers.
 
 ---
 
+## Event-data intersection: (WhoScored ∪ Scoresway) ∩ FotMob
+
+The rule: include a match only if it has **both** event data (WhoScored, or
+Scoresway as fallback) **and** FotMob shots/xG.
+
+| Bucket | Matches | Share |
+|---|---|---|
+| Total football-data matches, 2020–2026 | 11,282 | 100% |
+| **Both FotMob and WhoScored** | **10,941** | **97.0%** |
+| FotMob only (no event data) | 298 | 2.6% |
+| WhoScored only (no xG/shots) | 42 | 0.4% |
+| Neither | 1 | 0.0% |
+
+By season:
+
+| Season | Total | FotMob | WhoScored | Both |
+|---|---|---|---|---|
+| 2020 | 1,826 | 1,826 | 1,826 | 1,826 |
+| 2021 | 1,826 | 1,826 | 1,826 | 1,826 |
+| 2022 | 1,826 | 1,826 | 1,826 | 1,826 |
+| 2023 | 1,752 | 1,752 | 1,752 | 1,752 |
+| 2024 | 1,752 | 1,752 | 1,752 | 1,752 |
+| 2025 | 1,752 | 1,750 | 1,751 | 1,750 |
+| 2026 | 548 | 507 | 250 | 209 |
+
+**2020–2025 is effectively perfect: 10,732 of 10,734 matches (99.98%).** The 2026
+drop is the usual current-season bridge lag, not a coverage problem.
+
+### Scoresway adds nothing for this scope
+
+The Scoresway fixture set in `sports-highlight` covers NWSL, Liga F,
+Frauen-Bundesliga, Serie A Women, WSL, Saudi leagues, youth and U21/U19
+tournaments. **It has no top-five men's league coverage.** So the "WhoScored,
+else Scoresway" fallback resolves to WhoScored only for our current scope. It
+becomes useful if we extend to women's or youth competitions.
+
+### What the intersection is for
+
+- **v1 and v2 do not need event data.** State, shots, xG, lineups, injuries and
+  the stoppage-time model are all covered by FotMob.
+- **v3 tactical features do**: PPDA, progressive passes, carries, xT/VAEP,
+  per-minute possession and corners.
+- If we build v3, train on the **10,941-match intersection**. That is still
+  29× the blog's dataset and 1.5× ASA's, and it costs only 3% of the available
+  matches.
+
+The expensive part is not the join — Reep already gives us the IDs. It is pulling
+10,941 WhoScored event payloads through residential proxies, which is why it
+belongs in v3, not v1.
+
+---
+
 ## Verdict
 
 | Tier | Needs | FotMob enough? |
