@@ -1,0 +1,22 @@
+# data
+data/
+!data/.gitkeep
+*.parquet
+*.feather
+*.csv.gz
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# env / secrets
+.env
+.env.*
+
+# os
+.DS_Store

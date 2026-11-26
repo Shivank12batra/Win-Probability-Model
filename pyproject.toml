@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wpm"
+version = "0.1.0"
+description = "Live in-play win probability model for the top five European football leagues"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+model = ["lightgbm", "scikit-learn", "pyarrow"]
+
+[project.scripts]
+wpm = "wpm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
